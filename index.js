@@ -58,7 +58,8 @@ module.exports.typeOf = typeOf
  * being passed in is an array data type, and if either of those conditions are true than the flag variable is assigned to the value of an empty array. Then at the end of the function
  * scope the flag varible will be returned based off of it's assignment. 
  * 
- * @param {Array, number} : Function that takes in an array, and a number as it's parameters
+ * @param {Array} : This function takes in an array
+ * @param {number} : This funciton will also take in a number 
  * @returns {Number or Array} : Then returns either a number or an array based off of the conditions within the function, and the arguments passed into it 
  */
  function first(array, number) { 
@@ -87,7 +88,8 @@ module.exports.first = first
  * assinged to the value of an empty array. The function will then return the flag variable and it's current assignment based off of the arguments that are passed in after invoking the 
  * last function.
  * 
- * @param {array, number} : Function that takes in an array, and a number as it's parameters
+ * @param {array} : Function will take in input array.
+ * @param {number} : Function will take in a number.
  * @returns {Number or Array} : Then returns either a number or an array based off of the conditions within the function, and the arguments passed into it  
  */
 
@@ -113,7 +115,8 @@ module.exports.last = last
  * as the value being passed into the function, and if that is the case, the function will then return the index of that value, yet if the value being passed is does not match any of the elements within the array then the function 
  * will return negative one. 
  * 
- * @param {array, value} : Function that takes in an array and a value, to check against eachother
+ * @param {array} : Function will take in an array. 
+ * @param {value} : Function will take in a value
  * @returns {index, or -1} : The function will return either a negative one (if the value being passed in doesn't exist within the array being passed in) or the index of the value being passed into it. 
  */
  _.indexOf = function(array, value) {
@@ -133,7 +136,8 @@ module.exports.indexOf = indexOf
  * contains : This is a function that takes in the parameters of an array and a value, which then iterates through the array being passed in and will check if any of the elements in the input array match the value that is being 
  * passed into the function, and if so the function returns the boolean value of true, and if there are not any matches of the value being passed in compared to any index of the array being passed in then the function will return 
  * false. 
- * @param {array, value} : Function that takes in an array and a value to check them against eachother
+ * @param {array, value} : Function will take in an array.
+ * @param {value} : Function takes in a value
  * @returns {boolean} : The function will return a boolean value of either true or false based off of the arguments being passed in and their conditions
  */
   function contains(array, value) {
@@ -154,8 +158,8 @@ module.exports.contains = contains
  *  If the collection being passed in is not an array the code will then see it as an object and iterate through the object instead and again would perform 
  * the function being passed in upon each property within the object.  
  * 
- * @param {Array or Object} collection: The collection over which to iterate.
- * @returns {Function} action : The Function to be applied to each value in the 
+ * @param {collection} : Function will take in a collection (either array or object)
+ * @returns {Function} : The Function to be applied to each value in the 
  * collection
  */
  function each(collection, action) {
@@ -195,7 +199,8 @@ module.exports.each = each
   * filter: Function that takes in an array and a function to be tested against eachother. There is a variable declaration at the beginning of the function body which assings the variabel 
   * to the value of an empty array, that will be used to return later. It then will iterate throughout each element in the array and will invoke the function that is being passed in on each 
   * element, the function resolves to truthy then it will push the values of those truthy iterations into the new array. The function will then return that array. 
-  * @param {array, function} : Function that takes in a parameter of an array and a function to be tested against eachother.
+  * @param {array} : Function will take in an array
+  * @param {function} : Function will take in a callback function
   * @returns {array} : This function will return an array based off of the conditions resolutions after the arguments are passed in
   */
   function filter(array, func) {
@@ -213,7 +218,8 @@ module.exports.filter = filter
  * reject: This is a function that takes in an array and a function as it's parameters. There is then a variable declaration that assigns the variable to the value of an empy array. Then there is an 
  * iteration throught the passed in array and the passed in function is then tested on each element of the arrray, and if the resolution of those iterations resolve to falsey, then 
  * those elements are passed into the new array utilizing the push method, and then the function returns that new array.  
- * @param {array, function} : Function that takes in an array and a function as it's parameters to be tested against eachother.
+ * @param {array} : Function will take in an array. 
+ * @param {function} : This function will take in a callback function
  * @returns {array} : Returns a new array based off of the resolution of the arguments passed into the function
  */
 function reject(array, func) {
@@ -233,7 +239,8 @@ module.exports.reject = reject
  * truthy, it will then push the values of the function resolution into the truthy array. It then will check if the resolution of passing each element of the input array throught the parameters of the input function resolves to 
  * falsey, then it will push those values into the falsey array. Then outside of the loop both the falsey array and the truthey array will be pushed into the new array, and then that new array is returned containing both truthy and falsey values
  * as well as in that order. 
- * @param {array, function} : Function takes in a parameter of an array and a function to be tested against eachother 
+ * @param {array} : Function will take in an array
+ * @param {function} : Function will take in a callback function
  * @returns {array} : Returns an array of the truthy values, and the falsey values in that order.
  */
  function partition(array, func) {
@@ -258,7 +265,8 @@ module.exports.partition = partition
  * and then it will iterate through the array, and push the resolution of the function acting on each element of the array into the output array. If either beginning conditions isn't true for the first
  * blocks of code then the collection will be seen as an object and then iterate accordingly, and will store the resolution of the callback function acting on the properties of the object into a result variable
  * and then it will push that result into the output array. The output array is then returned based off of the arguments passed into the function.  
- * @param {collection, function} : Function that takes in a collection that can either be an array or an object, and a function to act on the elements or properties of the collection, as parameters
+ * @param {collection} : Function will take in a collection (either an array or object)
+ * @param {function} : Function will take in a callback function 
  * @returns {array} : This function will return an array with the resolved values of the callback function contained within. 
  */
  _.map = function(collection, func) {
@@ -288,7 +296,8 @@ module.exports.map = map
 /**
  * pluck: This function takes in an array and a property as it's parameters and calls the map function on those parameters in the return statement, which will then return the current property that is 
  * being checked from the map function based off of the value being passed into the prop parameter. 
- * @param {array, property} : Function that takes an array and a property as it's parameters 
+ * @param {array} : Function will take in an array 
+ * @param {property} : Function will take in a property 
  * @returns {value} : This function returns the element or value that is found in the array or collection that it is checking.
  */
  function pluck(array, prop) {
@@ -308,7 +317,8 @@ module.exports.pluck = pluck
  * and if so will iterate through the object and execute the callback function on every property thorughout the iteration, which will then check to see if the resolution of that callback function resolves to a falsey statement, and if so 
  * will reassigne the flag variable to false, and then will break out of the loop at the first falsey scenerio. Then if there isn't a callback function the fucntion will then check if the any values in the collection resolves to a falsey 
  * statement, and if so it will reassigne the flag variable to false. The function will then return the the flag variable which will be either true or false based off of the arguments passed into the function invocation. 
- * @param {collection, function} : Function that takes in the parameters of a collection (that can either be an object or an array), as well as a function to be executed on the values or elements of the collection being passed in
+ * @param {collection} : Function will take in a collection (either an object or array) 
+ * @param {function} : Function will take in a callback function 
  * @returns {boolean} : This function returns a boolean value of either true or false based off of the arguments passed into the parameters during the functions invocation. 
  */
  function every(collection, func) {
@@ -355,7 +365,8 @@ module.exports.pluck = pluck
      * the object and enact the callback function on all of the objects properties, and then it will check to see if the any of the callback functions resolutions after being enacted on those properties is true, it will then reassigne the flag variable to true.
      * If the collection is an object but there isn't a function being passed in then it will see if any of the objects properties resolve to a truthey statement and if so the flag variable will be reassigned to true. The some function will then return the flag 
      * variable which will be a boolean value. 
-     * @param {collection, function} : Function that takes in a collection (which will either be an array or an object), and a function that will be invoked on the properties or elements of the collection, as it's parameters.
+     * @param {collection} : Function will take in a collection (either object or array)  
+     * @param {function} : Function will take in a callback function
      * @returns {boolean} : This function will return either true or false based off of the arguments passed into the parameters after being invoked. 
      */
      function some(collection, func) {
@@ -399,7 +410,9 @@ module.exports.pluck = pluck
       * the passed in array. It will then iterate through the array, and reassigne the value of the seed to the value of the function being enacted on the the elements of the array as well as the seed. If there was not a seed passed into the reduce function, it 
       * will then iterate through the array and will still assigne the value of seed to the value of the callback functions resolution. The reduce function will then return the value of seed which can be either an array, an object, a string, or a number. 
       * 
-      * @param {array, function, seed} : Function that takes in an array, a function to execute on the elements of the array, and a possible seed that will act as a starting point, as it's parameters. 
+      * @param {array} : Function will take in an array
+      * @param {function} : Function will take in a callback function 
+      * @param {seed} : Function will take in a seed 
       * @returns {value} : This function will return any value depending on the seeds value after the functions resolution. 
       */
      function reduce(array, func, seed) {
@@ -421,7 +434,8 @@ module.exports.pluck = pluck
      * extend: This function takes in objects (an optional amount as noted with the spread operator), as it's parameter(s). There is a flag variable that will assign it to the value of the first index of the array of objects (array exists because of the spread operator) 
      * it wil then iterate throughout the array of objects to acsess the objects and then will iterate through each object passed in to acsess it's key/value pairs and will assign the properties of the ne objects to the orginal object assignment. The function will then return 
      * the flag variable which will be an object containing all of the key/value pairs of any object passed into the function. 
-     * @param {object, or objects} : Function that takes in one objects or multiple objects to be combined
+     * @param {object} : Function will take in an object 
+     * @param {objects} : Function will take in an x amount of more objects 
      * @returns {object} : This function will return one object containing all of the properties of any other object passed into the function. 
      */
      function extend(...others) { 
