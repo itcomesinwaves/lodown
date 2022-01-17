@@ -119,7 +119,7 @@ module.exports.last = last
  * @param {value} : Function will take in a value
  * @returns {index, or -1} : The function will return either a negative one (if the value being passed in doesn't exist within the array being passed in) or the index of the value being passed into it. 
  */
- _.indexOf = function(array, value) {
+ function indexOf(array, value) {
     // return index of array that is the first occurence of the value 
     for (var i = 0; i < array.length; i++) {
         if (array[i] === value) {
@@ -159,8 +159,7 @@ module.exports.contains = contains
  * the function being passed in upon each property within the object.  
  * 
  * @param {collection} : Function will take in a collection (either array or object)
- * @returns {Function} : The Function to be applied to each value in the 
- * collection
+ * @returns {Nome} : There is no return, the each function will simply applay the callback function on each element in the collection
  */
  function each(collection, action) {
     if(Array.isArray(collection)) {
@@ -201,7 +200,7 @@ module.exports.each = each
   * element, the function resolves to truthy then it will push the values of those truthy iterations into the new array. The function will then return that array. 
   * @param {array} : Function will take in an array
   * @param {function} : Function will take in a callback function
-  * @returns {array} : This function will return an array based off of the conditions resolutions after the arguments are passed in
+  * @returns {array} : This function will return an array of values that returned true after being passed into the callback function
   */
   function filter(array, func) {
     let newArray = []; 
@@ -220,7 +219,7 @@ module.exports.filter = filter
  * those elements are passed into the new array utilizing the push method, and then the function returns that new array.  
  * @param {array} : Function will take in an array. 
  * @param {function} : This function will take in a callback function
- * @returns {array} : Returns a new array based off of the resolution of the arguments passed into the function
+ * @returns {array} : Returns a new array of all values that returned true after being passed into the callback function
  */
 function reject(array, func) {
     let newArray = [];
@@ -241,7 +240,7 @@ module.exports.reject = reject
  * as well as in that order. 
  * @param {array} : Function will take in an array
  * @param {function} : Function will take in a callback function
- * @returns {array} : Returns an array of the truthy values, and the falsey values in that order.
+ * @returns {array} : Returns an array of sub-arrays, and the 0 index will contain the truthy values and the 1 index will contain the falsey values 
  */
  function partition(array, func) {
     let truthy = []; 
@@ -269,7 +268,7 @@ module.exports.partition = partition
  * @param {function} : Function will take in a callback function 
  * @returns {array} : This function will return an array with the resolved values of the callback function contained within. 
  */
- _.map = function(collection, func) {
+ function map(collection, func) {
     var outputArr = [];
     if (Array.isArray(collection)) {
        if (typeof func === 'string') {
